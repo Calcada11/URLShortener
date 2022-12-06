@@ -3,11 +3,15 @@
 import pyperclip
 import pyshorteners
 
+#Get Bitly API Key from local file
+with open('C:/Users/Cocada/Desktop/Github/Hello-World/URLShortener/MyKey.txt') as f:
+    BitlyKey = f.read()
+
 #Address input
 long_url = input("Enter URL to be shortened: ")
 
 #Conversion of address
-type_bitly = pyshorteners.Shortener(api_key = 'd1fbab372d3735b98a814c460c7d73fda58adacc')
+type_bitly = pyshorteners.Shortener(api_key = BitlyKey)
 short_url = type_bitly.bitly.short(long_url)
 
 #Copy link to clipboard
